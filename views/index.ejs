@@ -4,11 +4,58 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,300|Raleway:400,300,700' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" src="/js/scripts.js"></script>
         <title>Rate ThySelf</title>
     </head>
     <body>
-        <h1>Hello World! Rate ThySelf</h1>
+
+        <section class="ratings-wrapper">
+            <div class="ratings-display">
+                <h1>Rate ThySelf</h1>
+
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                        <th>JavaScript</th>
+                    </tr>
+                    <% rows.forEach(function(user) { %>
+                        <tr>
+                            <td><%= user.ID %></td>
+                            <td><%= user.name %></td>
+                            <td><%= user.html %></td>
+                            <td><%= user.css %></td>
+                            <td> <%= user.javascript %></td>
+                        </tr>
+                    <% })  %>
+                </table>
+            </div>
+        </section>
+
+        <section id="form-wrapper">
+            <form action='/ratings' method="POST">
+                <h2>Rate Your</h2>
+                <h2>Skills: 1 - 10</h2>
+                    <div class="form-control">
+                        <input type="text" name="name" placeholder="name" required>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" name="html" placeholder="html" required>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" name="css" placeholder="css" required>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" name="javascript" placeholder="javascript" required>
+                    </div>
+                    <div class="form-control">
+                        <button> Submit</button>
+                    </div>
+            </form>
+        </section>
+
+        <script type="text/javascript" src="/js/scripts.js"></script>
 
     </body>
 </html>

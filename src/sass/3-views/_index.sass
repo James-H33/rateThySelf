@@ -2,5 +2,91 @@
     padding: 0
     margin: 0
 
+body
+    background: $main-background
+    font-family: $raleway
+
 h1
-    color: blue
+    color: $red
+    font-size: 80px
+    font-weight: lighter
+    padding: 10px 0
+
+
+.ratings-wrapper
+    width: 100%
+    height: auto
+    text-align: center
+
+.ratings-display
+    width: 100%
+    height: 100%
+    padding: 60px 0
+    background: $main-background
+
+    table
+        width: 100%
+        max-width: 400px
+        height: auto
+        color: $light-text
+        font-size: 18px
+        margin: 0 auto
+
+    tr
+        width: 100%
+        height: 40px
+        margin: 5px 0
+        background: #fff
+
+
+
+#form-wrapper
+    width: 100%
+    height: auto
+    padding: 60px 0
+
+    form
+        width: 350px
+        height: auto
+        margin: 0 auto
+        text-align: center
+
+    h2
+        color: $red
+        font-size: 50px
+        font-weight: lighter
+
+
+.form-control
+    width: 100%
+    height: auto
+    margin: 5px 0
+
+    input
+        width: calc(100% - 10px)
+        height: 40px
+        color: $light-text
+        font-size: 20px
+        font-style: italic
+        letter-spacing: $let-space-1
+        display: block
+        border: none
+        outline: none
+        padding-left: 10px
+
+    input::-webkit-input-placeholder
+        color: $placeholder-text
+
+    button
+        width: 100%
+        height: 40px
+        color: $placeholder-text
+        font-size: 20px
+        background: #fff
+        outline: none
+        border: none
+        transition: all 350ms linear
+        cursor: pointer
+
+        &:hover
+            color: $red
