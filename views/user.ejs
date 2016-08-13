@@ -1,0 +1,33 @@
+<% include ./partials/header %>
+
+<article id="article" data-title="user"></article>
+
+<section class="user-wrapper">
+    <div class="back-btn">
+        <a href="/">Back</a>
+    </div>
+    <div class="user-display">
+
+    <h1><%= user.name %></h1>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>HTML</th>
+                <th>CSS</th>
+                <th>JavaScript</th>
+            </tr>
+            <tr>
+                <td><%= user.ID %></td>
+                <td><%= user.name %></td>
+                <td><%= user.html %></td>
+                <td><%= user.css %></td>
+                <td><%= user.javascript %></td>
+            </tr>
+        </table>
+
+    </div>
+</section>
+    
+<% include ./partials/footer %>

@@ -4,15 +4,14 @@ const mysql     = require('mysql');
 
 // Connect to database "rateThySelf"
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'rateThySelf'
+    host        : 'localhost',
+    user        : 'root',
+    password    : '',
+    database    : 'rateThySelf'
 });
 
 
 router.get('/', function(req, res, next) {
-
     getRatings(function(err, rows) {
         if (err) console.log(err);
         console.log(rows);
@@ -23,8 +22,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/ratings', function(req, res, next) {
     var postData = req.body;
-    console.log(postData);
-
     postRatings(postData, function(err, results) {
         if(err) console.log(err);
         res.redirect('/');
@@ -34,6 +31,7 @@ router.post('/ratings', function(req, res, next) {
 
 
 module.exports = router;
+
 
 
 function getRatings(cb) {
@@ -46,13 +44,11 @@ function getRatings(cb) {
 
 function postRatings(data, cb) {
     var values = {
-        name: data.name,
-        html: parseInt(data.html),
-        css: parseInt(data.css),
-        javascript: parseInt(data.javascript)
+        name        : data.name,
+        html        : parseInt(data.html),
+        css         : parseInt(data.css),
+        javascript  : parseInt(data.javascript)
     }
-
-    console.log(values);
 
     var sql = 'INSERT INTO user SET ?';
     db.query(sql, values, function(err, results) {
@@ -61,9 +57,3 @@ function postRatings(data, cb) {
     });
 }
 
-function isNotEmpty(str, cb) {
-    console.log(str);
-    if (str.length > 0)
-        parseToNum(str);
-    return cb(err);
-}

@@ -3,3 +3,19 @@ Rate ThySelf
 Description
 
 REST API matched with a SQL database
+
+Requirements for use: 
+    - Node 6.0^ 
+    - MySQL
+        - name database "rateThySelf"
+        - name table user with the follow fields
+            ID AUTO_INCREMENT
+            name
+            html
+            css
+            javascript
+    
+
+Running Program
+    - start SQL server with database and table made
+    - node app.js in root directory

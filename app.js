@@ -14,6 +14,7 @@ const app = express();
 
 // Require Routes
 const IndexRoutes = require('./routes/indexRoutes');
+const UserRoutes =  require('./routes/userRoutes');
 
 
 // Express Settings
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Use Routes
 app.use('/', IndexRoutes);
+app.use('/', UserRoutes);
 
 
 app.listen(port, portIP, console.log('Server has started..'));
