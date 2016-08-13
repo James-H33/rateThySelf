@@ -10,19 +10,23 @@ h1
     color: $red
     font-size: 80px
     font-weight: lighter
-    padding: 10px 0
-
+    padding: 20px 0 10px 0
 
 .ratings-wrapper
     width: 100%
-    height: auto
+    height: 100vh
     text-align: center
+    overflow: hidden
 
 .ratings-display
     width: 100%
-    height: 100%
-    padding: 60px 0
+    height: 200vh
     background: $main-background
+    transition: $mid-trans
+    transform: translateY(0)
+
+    &.active-view
+        transform: translateY(-50%)
 
     table
         width: 100%
@@ -38,16 +42,71 @@ h1
         margin: 5px 0
         background: #fff
 
+.ratings-container
+    width: 100%
+    height: 100vh
+    position: relative
 
+.page-down
+    width: 30px
+    height: 30px
+    position: absolute
+    bottom: 50px
+    left: calc(50% - 15px)
+    cursor: pointer
+
+    span
+        width: 22px
+        height: 3px
+        background: $light-text
+        position: absolute
+        bottom: 10px
+
+
+        &:nth-of-type(1)
+            transform: rotate(45deg)
+            left: -4px
+        &:nth-of-type(2)
+            transform: rotate(-45deg)
+            left: 10px
+
+.page-up
+    width: 30px
+    height: 30px
+    position: absolute
+    top: 10px
+    left: calc(50% - 15px)
+    cursor: pointer
+
+    span
+        width: 22px
+        height: 3px
+        background: $light-text
+        position: absolute
+        bottom: 10px
+
+
+        &:nth-of-type(1)
+            transform: rotate(-45deg)
+            left: -4px
+        &:nth-of-type(2)
+            transform: rotate(45deg)
+            left: 10px
+
+.form-container
+    width: 100%
+    height: 100%
+    position: relative
 
 #form-wrapper
     width: 100%
     height: auto
-    padding: 60px 0
+    padding: 80px 0 60px 0
 
     form
-        width: 350px
+        width: 95%
         height: auto
+        max-width: 350px
         margin: 0 auto
         text-align: center
 

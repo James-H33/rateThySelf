@@ -10,50 +10,60 @@
 
         <section class="ratings-wrapper">
             <div class="ratings-display">
-                <h1>Rate ThySelf</h1>
+                <section class="ratings-container">
+                    <h1>Rate ThySelf</h1>
 
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>HTML</th>
-                        <th>CSS</th>
-                        <th>JavaScript</th>
-                    </tr>
-                    <% rows.forEach(function(user) { %>
+                    <table>
                         <tr>
-                            <td><%= user.ID %></td>
-                            <td><%= user.name %></td>
-                            <td><%= user.html %></td>
-                            <td><%= user.css %></td>
-                            <td> <%= user.javascript %></td>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>HTML</th>
+                            <th>CSS</th>
+                            <th>JavaScript</th>
                         </tr>
-                    <% })  %>
-                </table>
-            </div>
-        </section>
+                        <% rows.forEach(function(user) { %>
+                            <tr>
+                                <td><%= user.ID %></td>
+                                <td><%= user.name %></td>
+                                <td><%= user.html %></td>
+                                <td><%= user.css %></td>
+                                <td> <%= user.javascript %></td>
+                            </tr>
+                        <% })  %>
+                    </table>
 
-        <section id="form-wrapper">
-            <form action='/ratings' method="POST">
-                <h2>Rate Your</h2>
-                <h2>Skills: 1 - 10</h2>
-                    <div class="form-control">
-                        <input type="text" name="name" placeholder="name" required>
+                    <div class="page-down">
+                        <span></span>
+                        <span></span>
                     </div>
-                    <div class="form-control">
-                        <input type="text" name="html" placeholder="html" required>
+                </section>
+                <section class="form-container">
+                    <div id="form-wrapper">
+                        <form action='/ratings' method="POST">
+                            <h2>Rate Your</h2>
+                            <h2>Skills: 1 - 10</h2>
+                                <div class="form-control">
+                                    <input type="text" name="name" placeholder="name" required>
+                                </div>
+                                <div class="form-control">
+                                    <input type="text" name="html" placeholder="html" required>
+                                </div>
+                                <div class="form-control">
+                                    <input type="text" name="css" placeholder="css" required>
+                                </div>
+                                <div class="form-control">
+                                    <input type="text" name="javascript" placeholder="javascript" required>
+                                </div>
+                                <div class="form-control">
+                                    <button> Submit</button>
+                                </div>
+                        </form>
                     </div>
-                    <div class="form-control">
-                        <input type="text" name="css" placeholder="css" required>
+                    <div class="page-up">
+                        <span></span>
+                        <span></span>
                     </div>
-                    <div class="form-control">
-                        <input type="text" name="javascript" placeholder="javascript" required>
-                    </div>
-                    <div class="form-control">
-                        <button> Submit</button>
-                    </div>
-            </form>
-        </section>
+                </section>
 
         <script type="text/javascript" src="/js/scripts.js"></script>
 

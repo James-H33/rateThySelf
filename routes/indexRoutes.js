@@ -18,7 +18,6 @@ router.get('/', function(req, res, next) {
         console.log(rows);
         res.render('index', { rows: rows });
     });
-
 });
 
 
@@ -36,8 +35,6 @@ router.post('/ratings', function(req, res, next) {
 
 module.exports = router;
 
-
-// INSERT INTO `user` (`ID`, `name`, `html`, `css`, `javascript`) VALUES (NULL, 'James', '5', '5', '5');
 
 function getRatings(cb) {
     var sql = 'SELECT * FROM user';
@@ -69,18 +66,4 @@ function isNotEmpty(str, cb) {
     if (str.length > 0)
         parseToNum(str);
     return cb(err);
-}
-
-function parseData(data, cb) {
-    var myData = [];
-    var str;
-
-    myData.push(data.name);
-    myData.push(data.html);
-    myData.push(data.css);
-    myData.push(data.javascript);
-    str = myData.join(', ');
-    console.log(str);
-
-    return cb(null, str);
 }
